@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+html{
+	height:100%;
+}
+ body{
+ 	height:100%;
+ }
+ .f-b{
+ 	display:flex;
+ 	flex-direction:row ;
+ 	/*| row-reverse | column | column-reverse;*/
+ 	flex-wrap:wrap;
+ 	justify-content:center;
+ 	align-items:center;
+ 	/*align-content:center;*/
+ 	width:100%;
+ 	height:100%;
+ }
+ .f-b div{
+ 	/*flex:1;*/
+ 	width:300px;
+ 	height:150px;
+ 	text-align:center;
+ 	flex-grow:1;
+ }
+ .f-b .f-b1{
+ 	
+ 	background-color:red;
+ }
+  .f-b .f-b2{
+  	order:1;
+  	flex-grow:1;
+  	flex-basis:200px;
+  	align-self:flex-start;
+ 	background-color:yellow;
+ }
+  .f-b .f-b3{
+ 	background-color:blue;
+ }
+</style>
+</head>
+<body>
+<div class="f-b">
+	<div class="f-b1">justify-content属性定义了项目在主轴上的对齐方式。</div>
+	<div class="f-b2">align-items属性定义项目在交叉轴上如何对齐。</div>
+	<div class="f-b3">align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</div>
+</div>
+</body>
+</html>

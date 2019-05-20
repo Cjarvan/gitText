@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery实现JSONP</title>
+</head>
+<body>
+    <div id="mydiv">
+        <button id="btn">点击</button>
+    </div>
+</body>
+<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script> -->
+<script type="text/javascript">
+
+	// 定义一个动物类
+// function Animal (name) {
+//   // 属性
+//   this.name = name || 'Animal';
+//   // 实例方法
+// }
+// Animal.prototype.sleep = function(){
+//     console.log(this.name + '正在睡觉！');
+//   }
+
+function Cat(name){
+  // Animal.call(this);
+  this.name = name || 'Tom';
+}
+
+ Cat.prototype.sleep = function(){
+    console.log(this.name + '正在睡觉！');
+  }
+var cat = new Cat();
+
+// console.log(cat.constructor)
+// console.log(Animal.prototype)
+// console.log(cat.prototype)
+// console.log(cat.__proto__)
+console.log(cat.constructor ===Cat);
+console.log(Cat.constructor ===Function);
+console.log(cat.__proto__ === cat.constructor.prototype);
+console.log(Cat.prototype.__proto__ ===Object.prototype);
+console.log(Cat.__proto__ ===Function.prototype);
+console.log(Function.constructor ===Function)   //**
+console.log(Function.__proto__ ===Function.prototype)
+console.log(Function.prototype.__proto__ ===Object.prototype)
+console.log(Cat.prototype)
+// console.log(Cat.prototype.constructor ===Cat)
+// function Cat(){ 
+// }
+
+// Cat.prototype = new Animal();
+// // Cat.prototype.name = 'cat';
+
+// //　Test Code
+// var cat = new Cat();
+// console.log(cat.name);
+// console.log(cat.eat('fish'));
+// console.log(cat.sleep());
+// console.log(cat instanceof Animal); //true 
+// console.log(cat instanceof Cat); //true
+        // $("#btn").click(function(){
+        	// $.getJSON("https://api.github.com/users?callback=?",function(res){
+        	// 	console.log(res)
+        	// })
+         //    $.ajax({
+         //        async : true,
+         //        url : "https://api.github.com/users",
+         //        type : "GET",
+         //        dataType : "jsonp", // 返回的数据类型，设置为JSONP方式
+         //        jsonp : 'callback', //指定一个查询参数名称来覆盖默认的 jsonp 回调参数名 callback
+         //        jsonpCallback: 'handleResponse', //设置回调函数名
+         //        success: function(response, status, xhr){
+         //            console.log('状态为：' + status + ',状态是：' + xhr.statusText);
+         //            console.log(response);
+         //        }
+         //    });
+
+      	  // function xx(res){
+         //    	console.log(res)
+         //    	alert(1)
+         //    }
+         //    var script = document.createElement('script');
+         //    script.type = 'text/javascript';
+         //    script.src =  "https://api.github.com/users?callback=xx";
+         //    document.head.appendChild(script);
+    // });
+</script>
+<!-- <script type="text/javascript" src="https://api.github.com/users?callback=xx"></script> -->
+</html>

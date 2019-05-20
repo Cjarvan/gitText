@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div style="display:inline">
+	<div style="width:600px;height:200px;margin-top:60px;margin-bottom:80px;background-color:red">dsadsadsadsadsa</div>
+
+</div>
+<p style="width:300px;height:100px;margin-top:160px;margin-bottom:80px;background-color:yellow">xxxx</p>
+</body>
+
+<script type="text/javascript">
+	// var value = '  class1 class2     class3';
+	// var  newv =  value.split(/\s+/);
+	// console.log(newv)
+     xx( '  class1 class2     class3  ')
+	function xx(value) {
+    var classNames, i, l, elem, setClass, c, cl;
+
+    // if (jQuery.isFunction(value)) {
+    //     return this.each(function (j) {
+    //         jQuery(this).addClass(value.call(this, j, this.className));
+    //     });
+    // }
+
+    if (value && typeof value === "string") {
+    	var xx1 = value.trim();
+        classNames = xx1.split(/\s+/);
+        console.log(classNames);
+        for (i = 0, l = this.length; i < l; i++) {
+            elem = this[i];
+            
+            if (elem.nodeType === 1) {
+                if (!elem.className && classNames.length === 1) {
+                    elem.className = value;
+
+                } else {
+                    setClass = " " + elem.className + " ";
+
+                    for (c = 0, cl = classNames.length; c < cl; c++) {
+                        if (!~setClass.indexOf(" " + classNames[c] + " ")) {
+                            setClass += classNames[c] + " ";
+                        }
+                    }
+                    elem.className = jQuery.trim(setClass);
+                }
+            }
+        }
+    }
+
+    return this;
+}
+</script>
+</html>
